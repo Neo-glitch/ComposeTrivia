@@ -99,8 +99,8 @@ fun QuestionDisplay(
     }
     // creates dash of 10 pixels and dash space of 10 pixels
     val pathEffect = PathEffect.dashPathEffect(floatArrayOf(10f, 10f), 0f)
-
     val totalQuestionsCount = viewModel.getTotalQuestionsCount()
+
     Surface(
         modifier = Modifier
             .fillMaxWidth()
@@ -206,7 +206,7 @@ fun QuestionDisplay(
                 }
                 Button(
                     onClick = {
-                        if (questionIndex.value != totalQuestionsCount)
+                        if (questionIndex.value != totalQuestionsCount - 1)
                             onNextClicked(questionIndex.value)
                     },
                     modifier = Modifier
@@ -244,7 +244,6 @@ fun QuestionDisplay(
                     )
                 }
             }
-
         }
     }
 }
